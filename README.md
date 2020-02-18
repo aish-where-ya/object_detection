@@ -88,13 +88,12 @@ Again, replace path with your path. XXXX is the latest saved model checkpoint wh
 
 8. Download `object_detection_tutorial.ipynb` from this repository. This code accepts an image and displays it with the bounding boxes and labels for a limited time span. You may uncomment parts of the code to use your webcam for object detection. Make the following changes for object detection on a single image -
 
-	1. The variable "MODEL_NAME"
+	1. The variable "MODEL_NAME".
 	`MODEL_NAME = 'path/inference_graph'`	
-	2. The variable "PATH_TO_LABELS"
+	2. The variable "PATH_TO_LABELS".
 	`PATH_TO_LABELS = 'path/labelmap.pbtxt'`
 	Replace "path" with your own path.
-	Now, move to the last cell of the notebook. There, change -
-	3. The variable "image"
+	3. Now, move to the last cell of the notebook. There, change the variable "image".
 	`image = cv2.imread('path/image_name.PNG')`
 	Again, replace "path" with the path of the image directory on which you want to test this model. Replace "image_name.PNG" with the name of your image.
 	
