@@ -42,7 +42,7 @@ python generate_tfrecord.py --csv_input=path/test_labels.csv --image_dir=path/te
 ```
 Replace "path" with the path of your csv files, train or test image directories and .record files. 
 
-3. Create a label map for the names of your objects and store this mapping in labelmap.pbtxt. This is a  Tensorflow Graph Text file. The file will contain entries as follows -
+3. Create a label map for the names of your objects and store this mapping in `labelmap.pbtxt`. This is a  Tensorflow Graph Text file. The file will contain entries as follows -
 ```
 item {
     id: 1
