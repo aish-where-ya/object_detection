@@ -57,6 +57,7 @@ and the rest.
 4. Now we will use a configuration file for our training. I have used faster_rcnn_inception_v2_pets.config file which can be found in your `tensorflow/models/research/object_detection/samples/configs` folder. Copy this file from `tensorflow/models/research/object_detection/samples/configs` to `path/` , where "path" is the file which contains your .record files. In reference to point 5 of Prerequisites, the destination folder will be home/aishwarya/Project1. Use sudo cp command.
 
 After this step, in the copied config file, change the following parameters -
+
 	1. Line 9 - Set the number of objects to detect by changing the num_classes variable.
 	2. Line 106 - Set the path for the model.ckpt checkpoint file by replacing "PATH_TO_BE_CONFIGURED".
 	3. Line 123 - Set the path of the train.record TFRecord file by replacing "PATH_TO_BE_CONFIGURED".
@@ -64,6 +65,7 @@ After this step, in the copied config file, change the following parameters -
 	5. Line 130 - Set "num_examples" to the number of images in your test folder.
 	6. Line 135 - Set the path of the test.record TFRecord file by replacing "PATH_TO_BE_CONFIGURED".
 	7. Line 137 - Again set the path of label_map.pbtxt Tensorflow Graph Text file by replacing "PATH_TO_BE_CONFIGURED".
+	
 Save these changes.
 
 5. To begin training, go to `tensorflow/models/research/object_detection` folder and run the `model_main.py` file using the command -
@@ -78,7 +80,7 @@ tensorboard --logdir=path
 ```
 Replace "path" with your own path. I used `/home/aishwarya/Project1`. If Tensorboard does not open automatically then you can open `localhost:6006` on your web browser and you will be able to access Tensorboard.
 
-7. To run this model, we will first export the inference graph using export_inference_graph.py file present in `tensorflow/models/research/object_detection/` folder. Run it using-
+7. To run this model, we will first export the inference graph using `export_inference_graph.py` file present in `tensorflow/models/research/object_detection/` folder. Run it using-
 ```
 python export_inference_graph.py --input_type image_tensor --pipeline_config_path path/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix path/model.ckpt-XXXX --output_directory path/inference_graph
 ```
@@ -87,13 +89,13 @@ Again, replace path with your path. XXXX is the latest saved model checkpoint wh
 8. Download `object_detection_tutorial.ipynb` from this repository. This code accepts an image and displays it with the bounding boxes and labels for a limited time span. You may uncomment parts of the code to use your webcam for object detection. Make the following changes for object detection on a single image -
 
 	1. The variable "MODEL_NAME"
-	MODEL_NAME = 'path/inference_graph'	
+	`MODEL_NAME = 'path/inference_graph'`	
 	2. The variable "PATH_TO_LABELS"
-	PATH_TO_LABELS = 'path/labelmap.pbtxt'
+	`PATH_TO_LABELS = 'path/labelmap.pbtxt'`
 	Replace "path" with your own path.
 	Now, move to the last cell of the notebook. There, change -
 	3. The variable "image"
-	image = cv2.imread('path/image_name.PNG')
+	`image = cv2.imread('path/image_name.PNG')`
 	Again, replace "path" with the path of the image directory on which you want to test this model. Replace "image_name.PNG" with the name of your image.
 	
 Viola! Now you finally have your model ready.
