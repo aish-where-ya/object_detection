@@ -14,6 +14,7 @@ In this article, I will discuss Object Detection using Faster-RCNN.
 3. We will be dealing with the object_detection folder. For me, the path for this folder was `/usr/local/lib/python3.6/dist-packages/tensorflow/models/research/object_detection`. Make sure that the path after tensorflow/ is the same.
 4. I am assuming that the objects in each image have been labelled using LabelImg. After labelling, an xml file is generated for each image which contains the co-ordinates of the bounding boxes and label associated with each bounding box. 
 5. The file structure is important for this project. Preferably, use the following file structure.
+```
 -home/aishwarya/
    -Project1
        -train_images
@@ -25,6 +26,7 @@ In this article, I will discuss Object Detection using Faster-RCNN.
        -train.record
        -test.record
        -labelmap.pbtxt
+```
 The remaining files will be used from tensorflow/models/research/object_detection/.
 
 ## Procedure for object detection :-
